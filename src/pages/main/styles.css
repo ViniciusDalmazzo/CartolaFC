@@ -1,0 +1,51 @@
+.player-list{
+    display: block;
+    align-items: center;    
+    margin: 30px auto 0;
+    padding: 0 20px;
+}
+
+.player-list .player-div{
+    width: 450px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.player-list div p{
+    font-size: 16px;
+    color: #999;
+    margin-top: 5px;
+    line-height: 24px;
+}
+
+.player-list div a{
+    height: 42px;
+    border-radius: 5px;
+    border: 2px solid #da552f;  
+    background: none;
+    margin-top: 10px;
+    color: #da552f;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.player-list div a:hover{
+    background: #da552f;
+    color: #fff;
+
+}
+
+.player-list .player-info{
+    margin-top: 10px;
+}
+
