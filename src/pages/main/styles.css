@@ -36,7 +36,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.2s;
+    transition: all 0.5s;
 }
 
 .player-list div a:hover{
@@ -45,7 +45,40 @@
 
 }
 
-.player-list .player-info{
-    margin-top: 10px;
+.player-list table{
+    margin-top: 20px;
+    border-collapse: separate;
+    table-layout: auto; 
+    border-spacing: 30px 10px;
+    text-decoration: none;
 }
+
+.player-list table th{
+    color: #da552f;
+    font-size: 90%;
+    transition: all 0.3s;
+}
+
+
+.player-list table tr{
+    height: 30px;
+}
+
+.player-list .linha{
+    color: black;
+}
+
+.teta:hover{
+    color: red;
+    background: unset;
+    -webkit-transform: scale(1.8);
+    -ms-transform: scale(1.8);
+    transform: scale(1.8);
+    cursor: pointer;
+}
+
+.teta {
+    display: inline-flex;
+}
+
 

@@ -36,11 +36,27 @@ export default class Main extends Component {
                 {this.state.players.map(player => (
                     <div className="player-div" key={player.atleta_id}>
                         <strong>{player.nome}</strong> ({player.apelido})
-                        <div className="player-info">                           
-                            <strong>Preço R$</strong><p>{player.preco_num}</p>
-                            <strong>Média</strong><p>{player.media_num}</p>
-                            <strong>Jogos</strong> <p>{player.jogos_num}</p>                           
-                        </div>
+                       <table>
+                            <div className="teta">
+                                <th className="cabecalho">
+                                    <tr className="linha"><strong>Preço</strong></tr>
+                                    <tr>R$ {player.preco_num} </tr>
+                                </th>
+                            </div>
+                            <div className="teta">
+                                <th>
+                                    <tr className="linha"><strong>Média</strong></tr>
+                                    <tr>{player.media_num}</tr>
+
+                                </th>
+                            </div>
+                            <div className="teta">
+                                <th>
+                                    <tr className="linha"> <strong>Jogos</strong></tr>
+                                    <tr>{player.jogos_num}</tr>
+                                </th>
+                            </div>
+                        </table>
                         <a href="">Ver mais informações</a>
                     </div>
                 ))}
