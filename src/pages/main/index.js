@@ -35,6 +35,12 @@ export default class Main extends Component {
             return player.foto != null;
         })
 
+        playersFilter.sort(function(a, b){
+            return (a.preco_num > b.preco_num) ? -1 : ((b.preco_num > a.preco_num) ? 1 : 0);
+        });
+
+        playersFilter = playersFilter.slice(0, 52);
+
         return (
 
             <div className="player-list">
