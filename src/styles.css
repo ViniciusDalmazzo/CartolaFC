@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Armata');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +8,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #fafafa;
+    font-family: Armata, Helvetica, sans-serif;
+    background: #000000;
     color: #333;
 }

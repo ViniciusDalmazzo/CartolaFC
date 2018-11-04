@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
-
 import './styles.css';
+import Modal from "react-responsive-modal";
 
 export default class Main extends Component {
 
     state = {
         initInfos: [],
-        players: []
+        players: [],
+        open: false
     }
 
     componentDidMount() {
@@ -26,7 +27,14 @@ export default class Main extends Component {
 
         const response = await api.get('/atletas/mercado');
         this.setState({ players: response.data.atletas })
+    };
 
+    onOpenModal = () => {
+        this.setState({ open: true });
+    };
+
+    onCloseModal = () => {
+        this.setState({ open: false });
     };
 
     render() {
@@ -35,7 +43,7 @@ export default class Main extends Component {
             return player.foto != null;
         })
 
-        playersFilter.sort(function(a, b){
+        playersFilter.sort(function (a, b) {
             return (a.preco_num > b.preco_num) ? -1 : ((b.preco_num > a.preco_num) ? 1 : 0);
         });
 
@@ -46,7 +54,10 @@ export default class Main extends Component {
             <div className="player-list">
                 {playersFilter.map(player => (
                     <div className="player-div" key={player.atleta_id}>
+                        <div className="titulo">
                         <strong>{player.nome}</strong> ({player.apelido})
+                        </div>
+                        
 
                         <div className="image">
                             <img src={player.foto.replace('FORMATO', '140x140')}></img>
@@ -74,7 +85,11 @@ export default class Main extends Component {
                                 </div>
                             </table>
                         </div>
-                        <a href="">Ver mais informações</a>
+                        <button onClick={this.onOpenModal}>Ver mais informações</button>
+                        <Modal open={this.state.open} onClose={this.onCloseModal} little>
+                        <hr></hr>
+                            <h2>Teste</h2>
+                        </Modal>
                     </div>
                 ))}
             </div>
