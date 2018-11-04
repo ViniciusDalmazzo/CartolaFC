@@ -3,6 +3,9 @@
     align-items: center;    
     margin: 30px auto 0;
     padding: 0 20px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
 }
 
 .player-list .player-div{
@@ -17,7 +20,7 @@
 }
 
 .player-list div p{
-    font-size: 16px;
+    font-size: 12px;
     color: #999;
     margin-top: 5px;
     line-height: 24px;
@@ -46,7 +49,8 @@
 }
 
 .player-list table{
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: -20px;
     border-collapse: separate;
     table-layout: auto; 
     border-spacing: 30px 10px;
@@ -68,17 +72,29 @@
     color: black;
 }
 
-.teta:hover{
+.column:hover{
     color: red;
     background: unset;
     -webkit-transform: scale(1.8);
     -ms-transform: scale(1.8);
     transform: scale(1.8);
-    cursor: pointer;
 }
 
-.teta {
+.column {
     display: inline-flex;
 }
 
+.image{
+    margin-top: 5px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
