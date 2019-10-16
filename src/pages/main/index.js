@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import api from '../../services/api';
 import './styles.css';
 import Modal from "react-responsive-modal";
+import PlayerCard from '../../components/PlayerCard/index.js';
 
 export default class Main extends Component {
 
@@ -50,47 +51,17 @@ export default class Main extends Component {
         playersFilter = playersFilter.slice(0, 52);
 
         return (
-
-            <div className="player-list">
+            <div>
                 {playersFilter.map(player => (
-                    <div className="player-div" key={player.atleta_id}>
-                        <div className="titulo">
-                        <strong>{player.nome}</strong> ({player.apelido})
-                        </div>
-                        
-
-                        <div className="image">
-                            <img src={player.foto.replace('FORMATO', '140x140')}></img>
-                        </div>
-                        <div className="table">
-                            <table>
-                                <div className="column">
-                                    <th>
-                                        <tr className="linha"><strong>Preço</strong></tr>
-                                        <tr>R$ {player.preco_num} </tr>
-                                    </th>
-                                </div>
-                                <div className="column">
-                                    <th>
-                                        <tr className="linha"><strong>Média</strong></tr>
-                                        <tr>{player.media_num}</tr>
-
-                                    </th>
-                                </div>
-                                <div className="column">
-                                    <th>
-                                        <tr className="linha"> <strong>Jogos</strong></tr>
-                                        <tr>{player.jogos_num}</tr>
-                                    </th>
-                                </div>
-                            </table>
-                        </div>
-                        <button onClick={this.onOpenModal}>Ver mais informações</button>
-                        <Modal open={this.state.open} onClose={this.onCloseModal} little>
-                        <hr></hr>
-                            <h2>Teste</h2>
-                        </Modal>
-                    </div>
+                    <PlayerCard 
+                        key={player.atleta_id} 
+                        nome={player.apelido}
+                        preco={player.preco_num}
+                        media={player.media_num}
+                        jogos={player.jogos_num}
+                        foto={player.foto}
+                        variacao={player.variacao_num}
+                    />
                 ))}
             </div>
         );
