@@ -15,7 +15,7 @@ const PlayerCard = props => {
     
     return (
       <Card>
-        <img src={player.foto.replace('FORMATO', '140x140')}></img>
+        <img src={player.foto.replace('FORMATO', '140x140')} alt={player.apelido}></img>
         <Icon src="https://cartolafc.globo.com/dist/4.10.1/img/atleta/status/provavel.svg" height="20" width="25" />
         <InfoContainer>
           <Title>{player.apelido.toUpperCase()}</Title>
